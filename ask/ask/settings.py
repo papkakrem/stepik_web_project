@@ -79,7 +79,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'ask_db',
         'USER': 'root',
-        'PASSWORD': 'toor',
+        'PASSWORD': '',
         'HOST': '127.0.0.1',
     }
 }
