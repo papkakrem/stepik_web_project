@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 class QuestionManager(models.Manager):
 
     def new(self):
-        return self.get_queryset().order_by('-added_at')[0]
+        return self.get_queryset().order_by('-added_at')
 
     def popular(self):
         return self.get_queryset().order_by('-rating')

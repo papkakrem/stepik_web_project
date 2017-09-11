@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '$_ssg1oju5qo5zggb=c%21c0h_bp5@o^+muad%)6viv@j4+l2)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -55,7 +55,7 @@ ROOT_URLCONF = 'ask.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'qa/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -79,7 +79,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'ask_db',
         'USER': 'root',
-        'PASSWORD': '',
+        'PASSWORD': 'toor',
         'HOST': '127.0.0.1',
     }
 }

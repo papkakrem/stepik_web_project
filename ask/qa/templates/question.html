@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+        <meta charset="utf-8">
+        <title>{{question.title}}</title>
+    </head>
+    <body>
+        <h3>{{question.title}}</h3>
+        <div class="question">
+            {{question.text}}
+        </div>
+        <div class="info">
+            <p>Posted at {{question.added_at}} by {{question.author}}</p>
+            <p>Question rating is {{question.rating}}</p>
+        </div>
+    </body>
+</html>
