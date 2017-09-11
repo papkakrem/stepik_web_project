@@ -41,8 +41,10 @@ def index(request, is_popular=False, limit = 10):
 def question(request, id):
 
     question = get_object_or_404(Question, id=id)
+    answers = question.answer_set.all()
     return render(request, 'question.html',
                   {'question': question,
+                  'answers': answers
                   }
                  )
 
