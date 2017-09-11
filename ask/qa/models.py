@@ -18,7 +18,7 @@ class Question(models.Model):
 
     title = models.CharField(max_length=255)
     text = models.TextField()
-    added_at = models.DateField()
+    added_at = models.DateTimeField()
     rating = models.IntegerField()
     author = models.ForeignKey(User)
     likes = models.ManyToManyField(User, related_name='q_id_like')
@@ -32,7 +32,7 @@ class Question(models.Model):
 class Answer(models.Model):
 
     text = models.TextField()
-    added_at = models.DateField()
+    added_at = models.DateTimeField()
     question = models.ForeignKey(Question)
     author = models.ForeignKey(User)
 
