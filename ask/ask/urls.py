@@ -23,7 +23,7 @@ urlpatterns = [
     url(r'^login/', views.test, name='login'),
     url(r'^signup/', views.test, name='signup'),
     url(r'^question/(?P<id>\d+)', views.question, name='question'),
-    url(r'^ask/', views.test, name='ask'),
+    url(r'^ask/', views.ask_form, name='ask'),
     url(r'^popular/', views.index, {'is_popular': True}, name='popular'),
     url(r'^new/', views.test, name='new')
 ]

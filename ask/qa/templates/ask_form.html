@@ -4,21 +4,19 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
         <meta charset="utf-8">
-        <title>{{question.title}}</title>
+        <title>Ask question</title>
     </head>
     <body>
         {% load template_extends %}
-        <h3>{{question.title}}</h3>
-        <div class="question">
-            <b>Question:</b> {{question.text}}
-        </div>
-        <div class="info">
-            <p>Posted at {{question.added_at}} by {{question.author}}</p>
-            <p>Question rating is {{question.rating}}</p>
-        </div>
+        <h3>Ask your question:</h3>
+        {% for e in form.non_field_errors %}
+            <div class="alert alert-danger">
+                {{e}}
+            </div>
+        {% endfor %}
+
         <form method="post">
             {% csrf_token %}
-            <fieldset>
                 {% for field in form %}
                     <div class="form-group {% if field.errors %}has-error{% endif %}">
                         <label class="control-label">{{field.label}}</label>
@@ -28,17 +26,9 @@
                         {% endfor %}
                     </div>
                 {% endfor %}
-            </fieldset>
             <div class="form-actions">
-                <button type="submit" class="btn btn-primary">Answer question</button>
+                <button type="submit" class="btn btn-primary">Ask question</button>
             </div>
         </form>
-        <h4>Answers:</h4>
-        {% for answer in answers %}
-            <div class="answer">
-                <b>{{answer.text}}.</b> Posted by {{answer.author}}
-                at {{answer.added_at}}
-            </div>
-        {% endfor %}
     </body>
 </html>
